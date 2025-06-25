@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "author": "pc1117 <1023861544@qq.com>",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev",
+    "serve": "node server"
+  },
+  "dependencies": {
+    "umi": "^4.4.11",
+    "ws": "^8.18.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "typescript": "^5.0.3"
+  }
+}
