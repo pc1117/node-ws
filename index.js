@@ -7,6 +7,7 @@ const { open } = require('sqlite');
 const { availableParallelism } = require('node:os');
 const cluster = require('node:cluster');
 const { createAdapter, setupPrimary } = require('@socket.io/cluster-adapter');
+const { openUrl } = require('./utils');
 
 if (cluster.isPrimary) {
   const numCPUs = availableParallelism();
@@ -76,10 +77,13 @@ async function main() {
     }
 
   });
-    // each worker will listen on a distinct port
+  // each worker will listen on a distinct port
   const port = process.env.PORT;
   server.listen(port, () => {
     console.log(`server running at http://localhost:${port}`);
+    if (port === "4000") {
+      openUrl(`http://localhost:${port}`);
+    }
   });
 }
 
